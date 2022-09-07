@@ -1,25 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useContext } from 'react'
+import { Context } from './Context'
 
-function App() {
+export default function App() {
+
+  const {counter, changeCounter} = useContext(Context)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={{
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: "center",
+      width: '100%',
+      height: '100vh'
+    }}>
+      <div style={{
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '3rem'
+      }}>
+        <div style={{
+          fontSize: '3rem'
+        }}>count : {counter}</div>
+        <button style={{
+          cursor: 'pointer',
+          width: '300px',
+          height: '50px',
+          fontSize: '2rem'
+        }} onClick={changeCounter}>Click Add</button>
+      </div>
     </div>
-  );
+  )
 }
-
-export default App;
