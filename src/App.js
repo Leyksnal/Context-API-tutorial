@@ -3,7 +3,7 @@ import { Context } from './Context'
 
 export default function App() {
 
-  const {counter, changeCounter} = useContext(Context)
+  const {counter, changeCounter, reset, sub} = useContext(Context)
 
   return (
     <div style={{
@@ -26,7 +26,19 @@ export default function App() {
           width: '300px',
           height: '50px',
           fontSize: '2rem'
-        }} onClick={changeCounter}>Click Add</button>
+        }} onClick={reset}>Reset</button>
+        <button style={{
+          cursor: 'pointer',
+          width: '300px',
+          height: '50px',
+          fontSize: '2rem'
+        }} onClick={changeCounter}>+1</button>
+        <button style={{
+          cursor: 'pointer',
+          width: '300px',
+          height: '50px',
+          fontSize: '2rem'
+        }} onClick={sub}>-1</button>
       </div>
     </div>
   )

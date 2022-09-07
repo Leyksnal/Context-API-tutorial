@@ -9,10 +9,16 @@ export const Global = ({children}) => {
     const changeCounter =() =>{
         set(counter + 1)
     }
+    const sub =() =>{
+        set(counter - 1)
+    }
+    const reset =() =>{
+        set(0)
+    }
 
     return(
         <Context.Provider value={{
-            counter, changeCounter
+            counter, changeCounter, reset, sub
         }}>
             {children}
         </Context.Provider>
